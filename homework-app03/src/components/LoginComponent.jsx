@@ -4,8 +4,9 @@ function LoginComponent({userList, setCurrentUser}) {
 
     const selectBox = useRef(null);
     
+    // 로그인 버튼을 누르면 작동하는 함수
     const login = ()=>{
-        setCurrentUser(userList.find((user)=> user.myName === selectBox.current.value));
+        setCurrentUser(userList.find((user)=> user.myName === selectBox.current.value));  // 현재 로그인 되어 있는 유저를 select box 의 값으로 변경
     }
 
     return (

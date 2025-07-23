@@ -1,9 +1,8 @@
 import React, { useRef } from 'react';
 
-function BookControlComponent({currentUser, bookList, updateBookList}) {
+function BookControlComponent({updateBookList}) {
     
     const inputText = useRef(null);
-    
     
     return (
         <>
