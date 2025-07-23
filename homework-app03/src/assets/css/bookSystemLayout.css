@@ -1,0 +1,87 @@
+@charset 'UTF-8';
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.contents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid black;
+    height: 950px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.login{
+    display: flex;
+    flex-direction: row;
+    height: 36px;
+    width: 80%;
+    justify-content: right;
+    margin-top: 10px;
+}
+
+.book-list-container{
+    width: 100%;
+}
+
+.my-book-list{
+    width: 80%;
+    background-color: rgb(198, 196, 196);
+    border-radius: 7px;
+    padding: 1rem 1rem;
+}
+
+.my-book-div {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-radius: 7px;
+    background-color: white;
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 10px;
+}
+
+.book-list{
+    width: 80%;
+    background-color: rgb(198, 196, 196);
+    border-radius: 7px;
+    padding: 1rem 1rem;
+    overflow: scroll;
+}
+
+.book-div {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-radius: 7px;
+    background-color: white;
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 10px;
+}
+
+.book-control{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.right{
+    display: flex;
+    width: 80%;
+    justify-content: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
