@@ -14,6 +14,24 @@ body{
     margin-top: 50px;
 }
 
+.join-container{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 70px;
+    line-height: 70px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.join-input input{
+    width: 100px;
+    border-radius: 7px;
+    height: 36px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 .login{
     display: flex;
     flex-direction: row;
@@ -30,6 +48,13 @@ body{
 .login-submenu-1{
     flex-grow: 12;
     text-align: right;
+}
+
+.login-submenu-1 select{
+    width: 100px;
+    border-radius: 7px;
+    height: 36px;
+    border: 2px solid black;
 }
 
 .login-submenu-2{

@@ -9,14 +9,14 @@ function LoginComponent({userList, login, logout}) {
                 <select id="user"
                     ref={selectBox} 
                     disabled={userList.find((user)=> user.isLogin === true) !== undefined}>
-                <option name="user" value="" defaultValue={true}></option>
-                {
-                    userList?.map((user, index)=>(
-                        <option name="user" 
-                            key={index} 
-                            value={user.myName}>{user.myName}</option>
-                    ))
-                }
+                    <option name="user" value="" defaultValue={true}></option>
+                    {
+                        userList?.map((user, index)=>(
+                            <option name="user" 
+                                key={index} 
+                                value={user.myName}>{user.myName}</option>
+                        ))
+                    }
                 </select>
                 {
                     // 아직 로그인 하지 않은 상태라면 "로그인" 버튼을 띄우고, 이미 로그인 한 상태라면 "로그아웃" 버튼을 띄운다.

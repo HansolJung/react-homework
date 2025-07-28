@@ -8,6 +8,7 @@ import User from '../data/User';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/todoLayout.css';
 import LoginComponent from '../components/LoginComponent';
+import JoinComponent from '../components/JoinComponent';
 
 
 // userReducer 의 모든 return 문은 [...state] 형식으로 작성해서 갱신 용도로 사용함.
@@ -19,6 +20,9 @@ const userReducer = (state, action)=>{
     let loginUser = null;  
     let otherUsers = null;
     switch(action.type) {
+        case 'join':  // 회원가입 하는 경우
+            return [...state, new User({ myName: action.payload, myTodoList: [] })];  // 기존 유저 리스트에 새로운 유저 추가
+
         case 'login':  // 로그인 하는 경우
             loginUser = state.filter((user)=> user.myName === action.payload);
             loginUser.map((user)=> user.isLogin = true);  // select box 로 선택된 이름과 동일한 유저의 로그인 상태 여부를 true 로 바꾼다.
@@ -83,6 +87,22 @@ function TodoLayout(props) {
         new User({ myName: '홍길동', myTodoList: [] }),
         new User({ myName: '이지혜', myTodoList: [] })
     ]);
+
+    // 회원가입 함수
+    const join = (value)=>{
+        if (value.length === 0) {
+            alert('회원가입할 사용자의 이름을 입력하십시오.');
+            return false;
+        }
+
+        if (userList.map((user)=> user.myName).includes(value)) {
+            alert('해당 이름으로 가입된 사용자가 이미 존재합니다.');
+            return false;
+        }
+
+        dispatch({type: 'join', payload: value});
+        alert('회원가입이 완료됐습니다.');
+    }
 
     // 로그인 함수
     const login = (value)=>{
@@ -152,6 +172,8 @@ function TodoLayout(props) {
             setCheckedTodoList(newArr); 
         }
 
+        console.log(userList);
+
         dispatch({type: 'check'});
     }, [checkedTodoList, userList]);
 
@@ -218,6 +240,7 @@ function TodoLayout(props) {
                     <header className="text-center mt-3">
                         <h2>To-do List</h2>
                     </header>
+                    <JoinComponent join={join}/>
                     <LoginComponent userList={userList} 
                         login={login} 
                         logout={logout}/>
